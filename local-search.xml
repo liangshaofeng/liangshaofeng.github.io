@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Hexo搭建个人博客步骤</title>
+    <link href="/2022/08/31/second/"/>
+    <url>/2022/08/31/second/</url>
+    
+    <content type="html"><![CDATA[<h2 id="第二篇文章"><a href="#第二篇文章" class="headerlink" title="第二篇文章"></a>第二篇文章</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>life</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>测试</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2022/08/30/hello-world/"/>
     <url>/2022/08/30/hello-world/</url>
