@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2022/08/30/hello-world/"/>
+    <url>/2022/08/30/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hexo搭建个人博客步骤</title>
+    <link href="/2022/08/30/first/"/>
+    <url>/2022/08/30/first/</url>
+    
+    <content type="html"><![CDATA[<p>Hexo搭建个人博客步骤<br>Hexo官方文档地址：<a href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a><br>准备<br>安装Git<br>Git官网下载[下载地址]。<br>安装Node.js<br>推荐长期支持版[下载地址]。<br>安装淘宝镜像cnpm加速<br>开始搭建</p><ol><li>安装Hexo<br>打开终端，输入命令  cnpm install -g hexo</li><li>初始化Hexo<br>在你的电脑上创建Hexo文件夹，在终端中切换到Hexo目录，输入命令 hexo init<br>初始化完成后Hexo的目录结构<br>image.png</li><li>更换博客主题<br>这里以 hexo-theme-fluid 主题为例<br>（1）获取主题最新版本<br>方式一：<br>Hexo 5.0.0 版本以上，推荐通过 npm 直接安装，进入博客目录执行命令：<br>然后在博客目录下创建 _config.fluid.yml，将主题的 _config.yml 内容复制进去。<br>方式二：<br>下载 最新 release 版本 解压到 themes 目录，并将解压出的文件夹重命名为 fluid。<br>（2）指定主题<br>如下修改 Hexo 博客目录中的 _config.yml：</li></ol><p>想获取更多主题，可在网站： hexo.io&#x2F;themes&#x2F; 选择自己喜欢的主题，按照此步的步骤clone下来。<br>4. _config.yml对博客进行基础配置<br>_config.yml文件修改，保存<br>image.png<br>5. 本地预览博客<br>编译项目，输入命令：hexo g<br>运行项目，输入命令：hexo s<br>在浏览器中输入<a href="http://localhost:4000/%E5%B0%B1%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E6%95%88%E6%9E%9C%E5%95%A6">http://localhost:4000/就可以看到效果啦</a><br>部署博客到Gitee上</p><ol><li>创建Gitee账号<br>到码云：gitee.com&#x2F; 上申请注册账号，码云类似国内版的GitHub，所以操作界面跟GitHub差不多，多了一些国产化的东西，这里不做更多介绍了，自己研究下。</li><li>创建项目<br>image.png<br>创建完成后，在项目中复制项目地址。</li><li>在_config.yml中配置Git<br>Git<br>复制代码<br>1<br>2<br>3<br>4<br>deploy:<br>  type: git<br>  repo: <a href="https://gitee.com/liangshaofeng/hexo-blog.git">https://gitee.com/liangshaofeng/hexo-blog.git</a><br>  branch: master<br>注意：冒号后面一定要有空格，否则不能正确识别。</li><li>发布到Gitee<br>输入命令npm install hexo-deployer-git –save 安装自动部署发布工具<br>输入命令hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 发布博客，首次发布需要在终端中输入账号和密码。</li><li>Gitee Pages设置<br>在项目的服务中选择Pages选项</li></ol><p>稍等一会儿博客就发布成功啦，访问博客地址：xiuxiuing.gitee.io&#x2F;blog，就可预览在…<br>如果博客的样式不对，则需要在_config.yml中配置下博客地址和路径：<br>Git<br>复制代码<br>1<br>2<br>url: <a href="https://xiuxiuing.gitee.io/blog/">https://xiuxiuing.gitee.io/blog/</a><br>root: &#x2F;blog<br>再执行命令hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 就可以啦。<br>至此，我们的博客就搭建完成啦！！！<br>在&#x2F;Hexo&#x2F;source&#x2F;_posts目录下就可以写我们的博客啦！！！</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>life</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>测试</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
