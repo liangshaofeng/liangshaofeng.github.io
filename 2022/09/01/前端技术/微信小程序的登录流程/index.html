@@ -16,24 +16,28 @@
   <meta name="author" content="liangshaofeng">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Vuex使用教程一、Vuex简述Vuex其实就是一个状态管理工具，所谓的状态，就是数据，通过这个工具进行管理某些数据。当多个组件都需要同一个数据时，可以将这个数据交给Vuex进行统一的管理，组件可以直接引用这个数据，避免了组件间繁琐的层层传递的情况。 二、Vuex核心Vuex有五大核心，state，getter，mutation，action，module。state用来存放要被管理的数据，get">
+    <meta name="description" content="微信小程序的登录流程一、背景传统的web开发实现登陆功能，一般的做法是输入账号密码、或者输入手机号及短信验证码进行登录。 服务端校验用户信息通过之后，下发一个代表登录态的 token 给客户端，以便进行后续的交互,每当token过期，用户都需要重新登录。 而在微信小程序中，可以通过微信官方提供的登录能力方便地获取微信提供的用户身份标识，快速建立小程序内的用户体系，从而实现登陆功能。 实现小程序用户">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vuex使用教程">
-<meta property="og:url" content="http://example.com/2022/09/01/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/Vuex%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:title" content="微信小程序的登录流程">
+<meta property="og:url" content="http://example.com/2022/09/01/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%99%BB%E5%BD%95%E6%B5%81%E7%A8%8B/index.html">
 <meta property="og:site_name" content="lsfeng&#39;s blog">
-<meta property="og:description" content="Vuex使用教程一、Vuex简述Vuex其实就是一个状态管理工具，所谓的状态，就是数据，通过这个工具进行管理某些数据。当多个组件都需要同一个数据时，可以将这个数据交给Vuex进行统一的管理，组件可以直接引用这个数据，避免了组件间繁琐的层层传递的情况。 二、Vuex核心Vuex有五大核心，state，getter，mutation，action，module。state用来存放要被管理的数据，get">
+<meta property="og:description" content="微信小程序的登录流程一、背景传统的web开发实现登陆功能，一般的做法是输入账号密码、或者输入手机号及短信验证码进行登录。 服务端校验用户信息通过之后，下发一个代表登录态的 token 给客户端，以便进行后续的交互,每当token过期，用户都需要重新登录。 而在微信小程序中，可以通过微信官方提供的登录能力方便地获取微信提供的用户身份标识，快速建立小程序内的用户体系，从而实现登陆功能。 实现小程序用户">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-09-01T08:40:12.000Z">
-<meta property="article:modified_time" content="2022-09-01T08:47:21.160Z">
+<meta property="og:image" content="https://s1.ax1x.com/2022/09/01/v5fqMj.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/09/01/v5fjZq.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/09/01/v5hSiT.png">
+<meta property="article:published_time" content="2022-09-01T08:52:39.000Z">
+<meta property="article:modified_time" content="2022-09-01T08:59:30.075Z">
 <meta property="article:author" content="liangshaofeng">
-<meta property="article:tag" content="vue vuex">
+<meta property="article:tag" content="小程序">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s1.ax1x.com/2022/09/01/v5fqMj.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Vuex使用教程 - lsfeng&#39;s blog</title>
+  <title>微信小程序的登录流程 - lsfeng&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Vuex使用教程"></span>
+            <span id="subtitle" data-typed-text="微信小程序的登录流程"></span>
           
         </div>
 
@@ -209,7 +213,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-09-01 16:40" pubdate>
+        <time datetime="2022-09-01 16:52" pubdate>
           2022年9月1日 下午
         </time>
       </span>
@@ -221,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          1.1k 字
         
       </span>
     
@@ -232,7 +236,7 @@
         
         
         
-          16 分钟
+          10 分钟
         
       </span>
     
@@ -270,26 +274,31 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Vuex使用教程</h1>
+            <h1 style="display: none">微信小程序的登录流程</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Vuex使用教程"><a href="#Vuex使用教程" class="headerlink" title="Vuex使用教程"></a>Vuex使用教程</h1><h2 id="一、Vuex简述"><a href="#一、Vuex简述" class="headerlink" title="一、Vuex简述"></a>一、Vuex简述</h2><p>Vuex其实就是一个状态管理工具，所谓的状态，就是数据，通过这个工具进行管理某些数据。当多个组件都需要同一个数据时，可以将这个数据交给Vuex进行统一的管理，组件可以直接引用这个数据，避免了组件间繁琐的层层传递的情况。</p>
-<h2 id="二、Vuex核心"><a href="#二、Vuex核心" class="headerlink" title="二、Vuex核心"></a>二、Vuex核心</h2><p>Vuex有五大核心，state，getter，mutation，action，module。state用来存放要被管理的数据，getter相当于computed计算属性，mutation中用来定义要修改state中数据的方法，action中用来定义异步的一些方法，module可以将多个store分成一个一个的模块。</p>
-<h2 id="三、Vuex使用"><a href="#三、Vuex使用" class="headerlink" title="三、Vuex使用"></a>三、Vuex使用</h2><p>1.在vue项目中使用Vuex时，需要先安装Vuex插件，并且注册，一般情况下都会在，在src下新创建一个store文件夹，下边有一个index.vue，在这个文件中创建store容器实例。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 1. 安装插件</span><br>npm install vuex --save<br><span class="hljs-comment">// 2. 注册插件</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">Vue</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span> <br><span class="hljs-keyword">import</span> <span class="hljs-title class_">Vuex</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vuex&#x27;</span><br><span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">use</span>(<span class="hljs-title class_">Vuex</span>)<br></code></pre></td></tr></table></figure>
+                <h1 id="微信小程序的登录流程"><a href="#微信小程序的登录流程" class="headerlink" title="微信小程序的登录流程"></a>微信小程序的登录流程</h1><h2 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h2><p>传统的web开发实现登陆功能，一般的做法是输入账号密码、或者输入手机号及短信验证码进行登录。</p>
+<p>服务端校验用户信息通过之后，下发一个代表登录态的 token 给客户端，以便进行后续的交互,每当token过期，用户都需要重新登录。</p>
+<p>而在微信小程序中，可以通过微信官方提供的登录能力方便地获取微信提供的用户身份标识，快速建立小程序内的用户体系，从而实现登陆功能。</p>
+<p>实现小程序用户体系主要涉及到openid和code的概念：</p>
+<p>1.调用wx.login()方法会生成code，将code作为参数传递给微信服务器指定接口，就可以获取用户的openid。</p>
+<p>2.对于每个小程序，微信都会将用户的微信ID映射出一个小程序 openid，作为这个用户在这个小程序的唯一标识。</p>
+<h2 id="二、流程"><a href="#二、流程" class="headerlink" title="二、流程"></a>二、流程</h2><p>微信小程序登陆具体实现的逻辑如下图所示：</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/v5fqMj"><img src="https://s1.ax1x.com/2022/09/01/v5fqMj.png" srcset="/img/loading.gif" lazyload alt="v5fqMj.png"></a></p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-number">1.</span>通过  wx.<span class="hljs-keyword">login</span>()  获取到用户的code判断用户是否授权读取用户信息，调用wx.getUserInfo 读取用户数据。<br><span class="hljs-number">2.</span>由于小程序后台授权域名无法授权微信的域名，所以需要自身后端调用微信服务器获取用户信息。<br><span class="hljs-number">3.</span>通过 wx.request() 方法请求业务方服务器，后端把 appid , appsecret  和 code 一起发送到微信服务器。appid 和 appsecret 都是微信提供的，可以在管理员后台找到。<br><span class="hljs-number">4.</span>微信服务器返回了 openid 及本次登录的会话密钥 session_key。<br><span class="hljs-number">5.</span>后端从数据库中查找 openid ，如果没有查到记录，说明该用户没有注册，如果有记录，则继续往下走。<br><span class="hljs-number">6.</span>session_key 是对用户数据进行加密签名的密钥。为了自身应用安全，session_key 不应该在网络上传输。<br><span class="hljs-number">7.</span>然后生成 <span class="hljs-keyword">session</span>并返回给小程序。<br><span class="hljs-number">8.</span>小程序把 <span class="hljs-keyword">session</span> 存到  <span class="hljs-keyword">storage</span> 里面。<br><span class="hljs-number">9.</span>下次请求时，先从 <span class="hljs-keyword">storage</span> 里面读取，然后带给服务端。<br><span class="hljs-number">10.</span>服务端对比 <span class="hljs-keyword">session</span> 对应的记录，然后校验有效期。<br></code></pre></td></tr></table></figure>
 
-<p>2.创建vuex实例，在vuex上提供了一个Store()方法，用来创建实例，将其命名为store，意为仓库的意思。在Vuex.Store()中传一个配置对象，配置对象中包括上述的五大核心，如果用不到，也可以不做配置。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> store = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Vuex</span>.<span class="hljs-title class_">Store</span>(&#123;<br>    <span class="hljs-attr">state</span>: &#123;<span class="hljs-attr">num</span>: <span class="hljs-number">2</span>&#125;, <span class="hljs-comment">// 存放数据</span><br>    <span class="hljs-attr">getters</span>: &#123;&#125;, <span class="hljs-comment">// 计算属性</span><br>    <span class="hljs-attr">mutations</span>: &#123;&#125;, <span class="hljs-comment">// 修改state中数据的一些方法</span><br>    <span class="hljs-attr">actions</span>: &#123;&#125;, <span class="hljs-comment">// 异步方法</span><br>    <span class="hljs-attr">modules</span>: &#123;&#125; <span class="hljs-comment">// store模块</span><br>&#125;)<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> store<br></code></pre></td></tr></table></figure>
+<p>更加详细的功能图如下所示：</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/v5fjZq"><img src="https://s1.ax1x.com/2022/09/01/v5fjZq.png" srcset="/img/loading.gif" lazyload alt="v5fjZq.png"></a></p>
+<h2 id="三、扩展"><a href="#三、扩展" class="headerlink" title="三、扩展"></a>三、扩展</h2><p>实际业务中，我们还需要登录态是否过期，通常的做法是在登录态（临时令牌）中保存有效期数据，该有效期数据应该在服务端校验登录态时和约定的时间（如服务端本地的系统时间或时间服务器上的标准时间）做对比。</p>
+<p>这种方法需要将本地存储的登录态发送到小程序的服务端，服务端判断为无效登录态时再返回需重新执行登录过程的消息给小程。</p>
+<p>另一种方式可以通过调用wx.checkSession检查微信登陆态是否过期：</p>
+<p>1.如果过期，则发起完整的登录流程</p>
+<p>2.如果不过期，则继续使用本地保存的自定义登录态</p>
+<p>这种方式的好处是不需要小程序服务端来参与校验，而是在小程序端调用AP，流程如下所示：</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/v5hSiT"><img src="https://s1.ax1x.com/2022/09/01/v5hSiT.png" srcset="/img/loading.gif" lazyload alt="v5hSiT.png"></a></p>
 
-<p>3.在入口文件main.js中引入store。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// main.js</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">Vue</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./App&#x27;</span><br><span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./store/index.vue&#x27;</span> <span class="hljs-comment">// 简写 import store from &#x27;./store&#x27;</span><br><br><span class="hljs-title class_">Vue</span>.<span class="hljs-property">config</span>.<span class="hljs-property">productionTip</span> = <span class="hljs-literal">false</span><br><br><span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>(&#123;<br>    <span class="hljs-attr">el</span>: <span class="hljs-string">&#x27;#app&#x27;</span>,<br>   <span class="hljs-attr">store</span>: store, <span class="hljs-comment">// es6 简写  直接写 store 属性名和变量名相同</span><br>   <span class="hljs-attr">render</span>: <span class="hljs-function"><span class="hljs-params">h</span> =&gt;</span> <span class="hljs-title function_">h</span>(<span class="hljs-title class_">App</span>)<br>&#125;)<br></code></pre></td></tr></table></figure>
-
-<p>4.在页面中如何使用store中的数据？在使用vuex中的数据之前，先使用import导入写好的store。组件中在插值表达式中使用$store.state.num获取store中num的数据。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;div&gt;<br>    &lt;h2&gt;&#123;&#123; $store.state.num &#125;&#125;&lt;/h2&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
-
-<h2 id="四、mapState，mapMutations，mapGetters，mapActions映射"><a href="#四、mapState，mapMutations，mapGetters，mapActions映射" class="headerlink" title="四、mapState，mapMutations，mapGetters，mapActions映射"></a>四、mapState，mapMutations，mapGetters，mapActions映射</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-number">1.</span> <span class="hljs-comment">// 先从vuex中结解构出四个方法 </span><br><span class="hljs-keyword">import</span> &#123;mapState, mapMutations, mapGetters, mapActions&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vuex&#x27;</span><br><span class="hljs-number">2.</span> <span class="hljs-comment">// 在computed计算属性中映射state数据和getters计算属性</span><br><span class="hljs-attr">computed</span>: &#123;<br>    ...<span class="hljs-title function_">mapState</span>(<span class="hljs-string">&#x27;模块名&#x27;</span>, [<span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>])<br>    ...<span class="hljs-title function_">mapGetters</span>(<span class="hljs-string">&#x27;模块名&#x27;</span>, [<span class="hljs-string">&#x27;getName&#x27;</span>])<br>&#125;<br><span class="hljs-number">3.</span> <span class="hljs-comment">// 在methods方法中映射mutations和actions方法</span><br><span class="hljs-attr">methods</span>: &#123;<br>    ...<span class="hljs-title function_">mapMutations</span>(<span class="hljs-string">&#x27;模块名&#x27;</span>, [<span class="hljs-string">&#x27;方法名1&#x27;</span>,<span class="hljs-string">&#x27;方法名2&#x27;</span>])<br>    ...<span class="hljs-title function_">mapActions</span>(<span class="hljs-string">&#x27;模块名&#x27;</span>, [<span class="hljs-string">&#x27;方法名1&#x27;</span>,<span class="hljs-string">&#x27;方法名2&#x27;</span>])<br>&#125;<br><span class="hljs-number">4.</span> 这些数据和方法都可以通过<span class="hljs-variable language_">this</span>来调用和获取<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -322,7 +331,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/vue-vuex/">#vue vuex</a>
+        <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">#小程序</a>
       
     </div>
   
@@ -334,8 +343,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Vuex使用教程</div>
-      <div>http://example.com/2022/09/01/前端技术/Vuex使用教程/</div>
+      <div>微信小程序的登录流程</div>
+      <div>http://example.com/2022/09/01/前端技术/微信小程序的登录流程/</div>
     </div>
     <div class="license-meta">
       
@@ -377,18 +386,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/01/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%99%BB%E5%BD%95%E6%B5%81%E7%A8%8B/" title="微信小程序的登录流程">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">微信小程序的登录流程</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/01/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/Vue3-%E5%AE%9E%E7%8E%B0%E7%BD%91%E9%A1%B5%E8%83%8C%E6%99%AF%E6%B0%B4%E5%8D%B0%E5%8A%9F%E8%83%BD/" title="Vue3 实现网页背景水印功能">
-                        <span class="hidden-mobile">Vue3 实现网页背景水印功能</span>
+                      <a href="/2022/09/01/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/Vuex%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" title="Vuex使用教程">
+                        <span class="hidden-mobile">Vuex使用教程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
