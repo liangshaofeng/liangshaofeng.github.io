@@ -19,7 +19,7 @@
     <meta name="description" content="使用Hexo搭建博客并部署到Gitee或者GithubHexo官方文档地址：https:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F; 准备 安装Git  Git官网下载[下载地址]。  安装Node.js  推荐长期支持版[下载地址]。安装淘宝镜像cnpm加速 1npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org 开始搭建1. 安装He">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Hexo搭建博客并部署到Gitee或者Github">
-<meta property="og:url" content="http://example.com/2022/09/01/%E5%9F%BA%E7%A1%80%E6%8A%80%E8%83%BD/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0Gitee%E6%88%96%E8%80%85Github/index.html">
+<meta property="og:url" content="http://example.com/2022/08/31/%E5%9F%BA%E7%A1%80%E6%8A%80%E8%83%BD/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0Gitee%E6%88%96%E8%80%85Github/index.html">
 <meta property="og:site_name" content="lsfeng&#39;s blog">
 <meta property="og:description" content="使用Hexo搭建博客并部署到Gitee或者GithubHexo官方文档地址：https:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F; 准备 安装Git  Git官网下载[下载地址]。  安装Node.js  推荐长期支持版[下载地址]。安装淘宝镜像cnpm加速 1npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org 开始搭建1. 安装He">
 <meta property="og:locale" content="zh_CN">
@@ -29,8 +29,8 @@
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/webp/2597840/1661837141797-3d96989c-be9e-4b3a-bcc1-0a51987a7f19.webp#clientId=u028e2338-aaa0-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=ucb48f74a&margin=%5Bobject%20Object%5D&originHeight=438&originWidth=786&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u75d052f8-d087-4c8e-bd11-1b496bd5403&title=">
 <meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/09/01/2c08b563b89f94d7.png">
 <meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/09/01/2c08b563b89f94d7.png">
-<meta property="article:published_time" content="2022-09-01T03:23:16.000Z">
-<meta property="article:modified_time" content="2022-09-01T08:02:46.493Z">
+<meta property="article:published_time" content="2022-08-31T03:23:16.000Z">
+<meta property="article:modified_time" content="2022-09-01T08:10:04.667Z">
 <meta property="article:author" content="liangshaofeng">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary_large_image">
@@ -216,8 +216,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-09-01 11:23" pubdate>
-          2022年9月1日 上午
+        <time datetime="2022-08-31 11:23" pubdate>
+          2022年8月31日 上午
         </time>
       </span>
     
@@ -297,7 +297,7 @@
 <h4 id="2-初始化Hexo"><a href="#2-初始化Hexo" class="headerlink" title="2. 初始化Hexo"></a>2. 初始化Hexo</h4><p>在你的电脑上创建Hexo文件夹，在终端中切换到Hexo目录，输入命令 hexo init</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs git">E:\lsf\study\project\Blog\Hexo&gt;hexo init<br>INFO  Cloning hexo-starter https://github.com/hexojs/hexo-starter.git<br>[32mINFO [39m Install dependencies<br>warning hexo-renderer-stylus &gt; stylus &gt; css &gt; source-map-resolve@0.6.0: See https://github.com/lydell/source-map-resolve#deprecated<br>[#############################################################################################################] 463/463 warning Your current version of Yarn is out of date. The latest version is &quot;1.22.19&quot;, while you&#x27;re on &quot;1.22.18&quot;.<br>INFO  Start blogging with Hexo!<br></code></pre></td></tr></table></figure>
 <p>初始化完成后Hexo的目录结构<br><img src="https://s3.bmp.ovh/imgs/2022/09/01/77015b9a0a17dade.png" srcset="/img/loading.gif" lazyload></p>
-<h4 id="3-更换博客主题"><a href="#3-更换博客主题" class="headerlink" title="3. 更换博客主题"></a>3. 更换博客主题</h4><p>这里以 <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid"><strong>hexo-theme-fluid</strong></a>** **主题为例<br>Hexo Fluid使用手册：<a href>https://hexo.fluid-dev.com/docs/</a><br>（1）获取主题最新版本<br>方式一：<br>Hexo 5.0.0 版本以上，推荐通过 npm 直接安装，进入博客目录执行命令：</p>
+<h4 id="3-更换博客主题"><a href="#3-更换博客主题" class="headerlink" title="3. 更换博客主题"></a>3. 更换博客主题</h4><p>这里以 <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid"><strong>hexo-theme-fluid</strong></a>** **主题为例<br>Hexo Fluid使用手册：<a href="">https://hexo.fluid-dev.com/docs/</a><br>（1）获取主题最新版本<br>方式一：<br>Hexo 5.0.0 版本以上，推荐通过 npm 直接安装，进入博客目录执行命令：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">npm install --save hexo-theme-fluid<br></code></pre></td></tr></table></figure>
 <p>然后在博客目录下创建 _config.fluid.yml，将主题的 <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml">_config.yml</a> 内容复制进去。<br>方式二：<br>下载 <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/releases">最新 release 版本</a> 解压到 themes 目录，并将解压出的文件夹重命名为 fluid。<br>（2）指定主题<br>如下修改 Hexo 博客目录中的 _config.yml：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs git">theme: fluid  # 指定主题<br><br>language: zh-CN  # 指定语言，会影响主题显示的语言，按需修改<br></code></pre></td></tr></table></figure>
@@ -321,7 +321,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs git">git config --global user.name &quot;GitHub 用户名&quot;<br>git config --global user.email &quot;GitHub 邮箱&quot;<br></code></pre></td></tr></table></figure>
 <p>（2）创建 SSH 秘钥<br>输入 ssh-keygen -t rsa -C “GitHub 邮箱”，然后一路回车。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs git">$ ssh-keygen -t rsa -C &quot;479632263@qq.com&quot;<br>Generating public/private rsa key pair.<br>Enter file in which to save the key (/c/Users/QDM/.ssh/id_rsa):<br>/c/Users/QDM/.ssh/id_rsa already exists.<br>Overwrite (y/n)? y<br>Enter passphrase (empty for no passphrase):<br>Enter same passphrase again:<br>Your identification has been saved in /c/Users/QDM/.ssh/id_rsa<br>Your public key has been saved in /c/Users/QDM/.ssh/id_rsa.pub<br>The key fingerprint is:<br>SHA256:NW3Gb5I9NshZBbcPW/1JC+PKBQhVt/jZRiNWvJ4uKWY 479632263@qq.com<br>The key&#x27;s randomart image is:<br>+---[RSA 3072]----+<br>|       ..... .ooo|<br>|        . .oo o+o|<br>|         .oo=*o=+|<br>|         . ==BO=*|<br>|        S   *=X=+|<br>|          . o+.= |<br>|           o  o  |<br>|           E o . |<br>|          o . .  |<br>+----[SHA256]-----+<br></code></pre></td></tr></table></figure>
-<p>（3）添加秘钥<br>进入 [C:\Users\用户名.ssh] 目录（要勾选显示“隐藏的项目”），用记事本打开公钥 id_rsa.pub 文件并复制里面的内容。<br>登陆 GitHub ，进入 Settings 页面，选择左边栏的 SSH and GPG keys，点击 New SSH key。<br>Title 随便取个名字，粘贴复制的秘钥内容到 Key 中，点击 Add SSH key 完成添加。<br><img src="https://s3.bmp.ovh/imgs/2022/09/01/2c08b563b89f94d7.png" srcset="/img/loading.gif" lazyload><br>（4）验证连接<br>打开 Git Bash，输入 ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#64;&#103;&#105;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#x69;&#x74;&#64;&#103;&#105;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;</a> 出现 “Are you sure……”，输入 yes 回车确认</p>
+<p>（3）添加秘钥<br>进入 [C:\Users\用户名.ssh] 目录（要勾选显示“隐藏的项目”），用记事本打开公钥 id_rsa.pub 文件并复制里面的内容。<br>登陆 GitHub ，进入 Settings 页面，选择左边栏的 SSH and GPG keys，点击 New SSH key。<br>Title 随便取个名字，粘贴复制的秘钥内容到 Key 中，点击 Add SSH key 完成添加。<br><img src="https://s3.bmp.ovh/imgs/2022/09/01/2c08b563b89f94d7.png" srcset="/img/loading.gif" lazyload><br>（4）验证连接<br>打开 Git Bash，输入 ssh -T <a href="mailto:&#103;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#99;&#x6f;&#109;">&#103;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#99;&#x6f;&#109;</a> 出现 “Are you sure……”，输入 yes 回车确认</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs git">$ ssh -T git@github.com<br>Hi liangshaofeng! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.<br></code></pre></td></tr></table></figure>
 <h4 id="3-在-config-yml中配置Git-1"><a href="#3-在-config-yml中配置Git-1" class="headerlink" title="3. 在_config.yml中配置Git"></a>3. 在_config.yml中配置Git</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs git">deploy:<br>  type: git<br>  repo: git@github.com:liangshaofeng/liangshaofeng.github.io.git<br>  branch: main<br></code></pre></td></tr></table></figure>
 <p><strong>注意：冒号后面一定要有空格，否则不能正确识别。</strong><br>**     repo输入的地址是ssh的地址 。**</p>
@@ -375,7 +375,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>使用Hexo搭建博客并部署到Gitee或者Github</div>
-      <div>http://example.com/2022/09/01/基础技能/使用Hexo搭建博客并部署到Gitee或者Github/</div>
+      <div>http://example.com/2022/08/31/基础技能/使用Hexo搭建博客并部署到Gitee或者Github/</div>
     </div>
     <div class="license-meta">
       
@@ -387,7 +387,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年9月1日</div>
+          <div>2022年8月31日</div>
         </div>
       
       
@@ -417,15 +417,15 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2022/09/01/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/export%E3%80%81export%20default%E4%BB%A5%E5%8F%8Amodule.exports%E3%80%81exports%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/" title="export、export default以及module.exports、exports之间的区别">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">export、export default以及module.exports、exports之间的区别</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2022/09/01/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/export%E3%80%81export%20default%E4%BB%A5%E5%8F%8Amodule.exports%E3%80%81exports%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/" title="export、export default以及module.exports、exports之间的区别">
-                        <span class="hidden-mobile">export、export default以及module.exports、exports之间的区别</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
