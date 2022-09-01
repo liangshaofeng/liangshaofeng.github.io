@@ -16,28 +16,38 @@
   <meta name="author" content="liangshaofeng">
   <meta name="keywords" content="">
   
-    <meta name="description" content="微信小程序的登录流程一、背景传统的web开发实现登陆功能，一般的做法是输入账号密码、或者输入手机号及短信验证码进行登录。 服务端校验用户信息通过之后，下发一个代表登录态的 token 给客户端，以便进行后续的交互,每当token过期，用户都需要重新登录。 而在微信小程序中，可以通过微信官方提供的登录能力方便地获取微信提供的用户身份标识，快速建立小程序内的用户体系，从而实现登陆功能。 实现小程序用户">
+    <meta name="description" content="vue组件传值的12种方式 Vue最常见的12种组件间的通讯方式  props $emit .sync v-model ref $children &#x2F; $parent $attrs &#x2F; $listeners provide &#x2F; inject EventBus Vuex $root slot  适合父子间通信：props、$emit、$ref、slot、$parent、">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序的登录流程">
-<meta property="og:url" content="http://example.com/2022/09/01/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%99%BB%E5%BD%95%E6%B5%81%E7%A8%8B/index.html">
+<meta property="og:title" content="vue组件传值的12种方式">
+<meta property="og:url" content="http://example.com/2022/09/01/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/vue%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC%E7%9A%8412%E7%A7%8D%E6%96%B9%E5%BC%8F/index.html">
 <meta property="og:site_name" content="lsfeng&#39;s blog">
-<meta property="og:description" content="微信小程序的登录流程一、背景传统的web开发实现登陆功能，一般的做法是输入账号密码、或者输入手机号及短信验证码进行登录。 服务端校验用户信息通过之后，下发一个代表登录态的 token 给客户端，以便进行后续的交互,每当token过期，用户都需要重新登录。 而在微信小程序中，可以通过微信官方提供的登录能力方便地获取微信提供的用户身份标识，快速建立小程序内的用户体系，从而实现登陆功能。 实现小程序用户">
+<meta property="og:description" content="vue组件传值的12种方式 Vue最常见的12种组件间的通讯方式  props $emit .sync v-model ref $children &#x2F; $parent $attrs &#x2F; $listeners provide &#x2F; inject EventBus Vuex $root slot  适合父子间通信：props、$emit、$ref、slot、$parent、">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s1.ax1x.com/2022/09/01/v5fqMj.png">
-<meta property="og:image" content="https://s1.ax1x.com/2022/09/01/v5fjZq.png">
-<meta property="og:image" content="https://s1.ax1x.com/2022/09/01/v5hSiT.png">
-<meta property="article:published_time" content="2022-09-01T08:52:39.000Z">
-<meta property="article:modified_time" content="2022-09-01T08:59:30.075Z">
+<meta property="og:image" content="https://s1.ax1x.com/2022/09/01/v5hlyd.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/09/01/v5hyT0.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/09/01/v54CAP.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/09/01/v54ih8.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/09/01/v54k9S.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/09/01/v546ud.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/09/01/v54REt.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/09/01/v5458S.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/09/01/v54X5V.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/09/01/v55Z8O.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/09/01/v55mxe.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/09/01/v55MqA.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/09/01/v55JG8.png">
+<meta property="article:published_time" content="2022-09-01T09:03:28.000Z">
+<meta property="article:modified_time" content="2022-09-01T09:31:59.032Z">
 <meta property="article:author" content="liangshaofeng">
-<meta property="article:tag" content="小程序">
+<meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://s1.ax1x.com/2022/09/01/v5fqMj.png">
+<meta name="twitter:image" content="https://s1.ax1x.com/2022/09/01/v5hlyd.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>微信小程序的登录流程 - lsfeng&#39;s blog</title>
+  <title>vue组件传值的12种方式 - lsfeng&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="微信小程序的登录流程"></span>
+            <span id="subtitle" data-typed-text="vue组件传值的12种方式"></span>
           
         </div>
 
@@ -213,7 +223,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-09-01 16:52" pubdate>
+        <time datetime="2022-09-01 17:03" pubdate>
           2022年9月1日 下午
         </time>
       </span>
@@ -225,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          1.9k 字
         
       </span>
     
@@ -236,7 +246,7 @@
         
         
         
-          10 分钟
+          16 分钟
         
       </span>
     
@@ -274,30 +284,78 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">微信小程序的登录流程</h1>
+            <h1 style="display: none">vue组件传值的12种方式</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="微信小程序的登录流程"><a href="#微信小程序的登录流程" class="headerlink" title="微信小程序的登录流程"></a>微信小程序的登录流程</h1><h2 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h2><p>传统的web开发实现登陆功能，一般的做法是输入账号密码、或者输入手机号及短信验证码进行登录。</p>
-<p>服务端校验用户信息通过之后，下发一个代表登录态的 token 给客户端，以便进行后续的交互,每当token过期，用户都需要重新登录。</p>
-<p>而在微信小程序中，可以通过微信官方提供的登录能力方便地获取微信提供的用户身份标识，快速建立小程序内的用户体系，从而实现登陆功能。</p>
-<p>实现小程序用户体系主要涉及到openid和code的概念：</p>
-<p>1.调用wx.login()方法会生成code，将code作为参数传递给微信服务器指定接口，就可以获取用户的openid。</p>
-<p>2.对于每个小程序，微信都会将用户的微信ID映射出一个小程序 openid，作为这个用户在这个小程序的唯一标识。</p>
-<h2 id="二、流程"><a href="#二、流程" class="headerlink" title="二、流程"></a>二、流程</h2><p>微信小程序登陆具体实现的逻辑如下图所示：</p>
-<p><a target="_blank" rel="noopener" href="https://imgse.com/i/v5fqMj"><img src="https://s1.ax1x.com/2022/09/01/v5fqMj.png" srcset="/img/loading.gif" lazyload alt="v5fqMj.png"></a></p>
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-number">1.</span>通过  wx.<span class="hljs-keyword">login</span>()  获取到用户的code判断用户是否授权读取用户信息，调用wx.getUserInfo 读取用户数据。<br><span class="hljs-number">2.</span>由于小程序后台授权域名无法授权微信的域名，所以需要自身后端调用微信服务器获取用户信息。<br><span class="hljs-number">3.</span>通过 wx.request() 方法请求业务方服务器，后端把 appid , appsecret  和 code 一起发送到微信服务器。appid 和 appsecret 都是微信提供的，可以在管理员后台找到。<br><span class="hljs-number">4.</span>微信服务器返回了 openid 及本次登录的会话密钥 session_key。<br><span class="hljs-number">5.</span>后端从数据库中查找 openid ，如果没有查到记录，说明该用户没有注册，如果有记录，则继续往下走。<br><span class="hljs-number">6.</span>session_key 是对用户数据进行加密签名的密钥。为了自身应用安全，session_key 不应该在网络上传输。<br><span class="hljs-number">7.</span>然后生成 <span class="hljs-keyword">session</span>并返回给小程序。<br><span class="hljs-number">8.</span>小程序把 <span class="hljs-keyword">session</span> 存到  <span class="hljs-keyword">storage</span> 里面。<br><span class="hljs-number">9.</span>下次请求时，先从 <span class="hljs-keyword">storage</span> 里面读取，然后带给服务端。<br><span class="hljs-number">10.</span>服务端对比 <span class="hljs-keyword">session</span> 对应的记录，然后校验有效期。<br></code></pre></td></tr></table></figure>
-
-<p>更加详细的功能图如下所示：</p>
-<p><a target="_blank" rel="noopener" href="https://imgse.com/i/v5fjZq"><img src="https://s1.ax1x.com/2022/09/01/v5fjZq.png" srcset="/img/loading.gif" lazyload alt="v5fjZq.png"></a></p>
-<h2 id="三、扩展"><a href="#三、扩展" class="headerlink" title="三、扩展"></a>三、扩展</h2><p>实际业务中，我们还需要登录态是否过期，通常的做法是在登录态（临时令牌）中保存有效期数据，该有效期数据应该在服务端校验登录态时和约定的时间（如服务端本地的系统时间或时间服务器上的标准时间）做对比。</p>
-<p>这种方法需要将本地存储的登录态发送到小程序的服务端，服务端判断为无效登录态时再返回需重新执行登录过程的消息给小程。</p>
-<p>另一种方式可以通过调用wx.checkSession检查微信登陆态是否过期：</p>
-<p>1.如果过期，则发起完整的登录流程</p>
-<p>2.如果不过期，则继续使用本地保存的自定义登录态</p>
-<p>这种方式的好处是不需要小程序服务端来参与校验，而是在小程序端调用AP，流程如下所示：</p>
-<p><a target="_blank" rel="noopener" href="https://imgse.com/i/v5hSiT"><img src="https://s1.ax1x.com/2022/09/01/v5hSiT.png" srcset="/img/loading.gif" lazyload alt="v5hSiT.png"></a></p>
+                <h1 id="vue组件传值的12种方式"><a href="#vue组件传值的12种方式" class="headerlink" title="vue组件传值的12种方式"></a>vue组件传值的12种方式</h1><p><a target="_blank" rel="noopener" href="https://imgse.com/i/v5hlyd"><img src="https://s1.ax1x.com/2022/09/01/v5hlyd.png" srcset="/img/loading.gif" lazyload alt="v5hlyd.png"></a></p>
+<p>Vue最常见的12种组件间的通讯方式</p>
+<ul>
+<li>props</li>
+<li>$emit</li>
+<li>.sync</li>
+<li>v-model</li>
+<li>ref</li>
+<li>$children &#x2F; $parent</li>
+<li>$attrs &#x2F; $listeners</li>
+<li>provide &#x2F; inject</li>
+<li>EventBus</li>
+<li>Vuex</li>
+<li>$root</li>
+<li>slot</li>
+</ul>
+<p>适合父子间通信：props、$emit、$ref、slot、$parent、$children</p>
+<p>适合兄弟组件之间的通信：eventBus、Vuex</p>
+<p>祖孙与后代组件之间的通信：$attrs&#x2F;$listeners、provide&#x2F;inject、eventBus、Vuex</p>
+<p>复杂关系的组件之间的通信：Vuex</p>
+<h2 id="1、props"><a href="#1、props" class="headerlink" title="1、props"></a>1、props</h2><p>适用场景：父组件向子组件传递数据</p>
+<p>父组件向子组件传送数据，这应该是最常用的方式了</p>
+<p>子组件接收到数据之后，不能直接修改父组件的数据。</p>
+<p>否则会报错，因为当父组件重新渲染时，数据会被覆盖。如果只在子组件内要修改的话推荐使用computed</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/v5hyT0"><img src="https://s1.ax1x.com/2022/09/01/v5hyT0.png" srcset="/img/loading.gif" lazyload alt="v5hyT0.png"></a></p>
+<h2 id="2、-sync-子组件可以修改父组件内容"><a href="#2、-sync-子组件可以修改父组件内容" class="headerlink" title="2、.sync 子组件可以修改父组件内容"></a>2、.sync 子组件可以修改父组件内容</h2><p>.sync可以帮我们实现父组件向子组件传递的数据的双向绑定，所以子组件接收到数据后可以直接修改，并且会同时修改父组件的数据</p>
+<p>适用场景：子组件传递数据给父组件</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/v54CAP"><img src="https://s1.ax1x.com/2022/09/01/v54CAP.png" srcset="/img/loading.gif" lazyload alt="v54CAP.png"></a></p>
+<h2 id="3、v-model"><a href="#3、v-model" class="headerlink" title="3、v-model"></a>3、v-model</h2><p>和.sync类似，可以实现将父组件传给子组件的数据为双向绑定，子组件通过$emit修改父组件的数据</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/v54ih8"><img src="https://s1.ax1x.com/2022/09/01/v54ih8.png" srcset="/img/loading.gif" lazyload alt="v54ih8.png"></a></p>
+<h2 id="4、ref"><a href="#4、ref" class="headerlink" title="4、ref"></a>4、ref</h2><p>ref如果在普通的DOM元素上，引用指向的就是该DOM元素;</p>
+<p>如果在子组件上，引用的指向就是子组件实例;</p>
+<p>父组件可以通过 ref 主动获取子组件的属性或者调用子组件的方法</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/v54k9S"><img src="https://s1.ax1x.com/2022/09/01/v54k9S.png" srcset="/img/loading.gif" lazyload alt="v54k9S.png"></a></p>
+<h2 id="5、-emit-x2F-v-on"><a href="#5、-emit-x2F-v-on" class="headerlink" title="5、$emit &#x2F; v-on"></a>5、$emit &#x2F; v-on</h2><p>子组件通过派发事件的方式给父组件数据，或者触发父组件更新等操作</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/v546ud"><img src="https://s1.ax1x.com/2022/09/01/v546ud.png" srcset="/img/loading.gif" lazyload alt="v546ud.png"></a></p>
+<h2 id="6-、-attrs-x2F-listeners"><a href="#6-、-attrs-x2F-listeners" class="headerlink" title="6 、$attrs &#x2F; $listeners"></a>6 、$attrs &#x2F; $listeners</h2><p>多层嵌套组件传递数据时，如果只是传递数据，而不做中间处理的话就可以用这个，比如父组件向孙子组件传递数据时</p>
+<p>$attrs：包含父作用域里除 class 和 style 除外的非 props 属性集合。通过this.$attrs获取父作用域中所有符合条件的属性集合，然后还要继续传给子组件内部的其他组件，就可以通过v-bind&#x3D;”$attrs”</p>
+<p>$listeners：包含父作用域里.native除外的监听事件集合。如果还要继续传给子组件内部的其他组件，就可以通过v-on&#x3D;”$linteners”使用方式是相同的</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/v54REt"><img src="https://s1.ax1x.com/2022/09/01/v54REt.png" srcset="/img/loading.gif" lazyload alt="v54REt.png"></a></p>
+<h2 id="7、-children-x2F-parent"><a href="#7、-children-x2F-parent" class="headerlink" title="7、$children &#x2F; $parent"></a>7、$children &#x2F; $parent</h2><p>$children：获取到一个包含所有子组件(不包含孙子组件)的VueComponent对象数组，可以直接拿到子组件中所有数据和方法等</p>
+<p>$parent：获取到一个父节点的VueComponent对象，同样包含父节点中所有数据和方法等</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/v5458S"><img src="https://s1.ax1x.com/2022/09/01/v5458S.png" srcset="/img/loading.gif" lazyload alt="v5458S.png"></a></p>
+<h2 id="8、provide-x2F-inject"><a href="#8、provide-x2F-inject" class="headerlink" title="8、provide &#x2F; inject"></a>8、provide &#x2F; inject</h2><p>适用场景：祖先传递值给子孙</p>
+<p>使用方式与vue2.0略有差异，vue2.0的provide和inject都为配置项，而在 3.x ， provide 需要导入并在 setup 里启用，并且现在是一个全新的方法。在 3.x ， provide 需要导入并在 setup 里启用，并且现在是一个全新的方法。</p>
+<p>provide &#x2F; inject是依赖注入，在一些插件或组件库里被常用</p>
+<p>provide：可以让我们指定想要提供给后代组件的数据或方法</p>
+<p>inject：在任何后代组件中接收想要添加在这个组件上的数据或方法，不管组件嵌套多深都可以直接拿来用</p>
+<p>要注意的是provide和inject传递的数据不是响应式的，也就是说用inject接收来数据后，provide里的数据改变了，后代组件中的数据不会改变，除非传入的就是一个可监听的对象 所以建议还是传递一些常量或者方法</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/v54X5V"><img src="https://s1.ax1x.com/2022/09/01/v54X5V.png" srcset="/img/loading.gif" lazyload alt="v54X5V.png"></a></p>
+<h2 id="9、-EventBus"><a href="#9、-EventBus" class="headerlink" title="9、 EventBus"></a>9、 EventBus</h2><p>适用场景：兄弟组件&#x2F;隔代组件之间的通信</p>
+<p>EventBus是中央事件总线，不管是父子组件，兄弟组件，跨层级组件等都可以使用它完成通信操作</p>
+<p>定义方式有三种</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/v55Z8O"><img src="https://s1.ax1x.com/2022/09/01/v55Z8O.png" srcset="/img/loading.gif" lazyload alt="v55Z8O.png"></a></p>
+<p>使用如下，以方法一按需引入为例</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/v55mxe"><img src="https://s1.ax1x.com/2022/09/01/v55mxe.png" srcset="/img/loading.gif" lazyload alt="v55mxe.png"></a></p>
+<h2 id="10、Vuex-在大项目中被常用"><a href="#10、Vuex-在大项目中被常用" class="headerlink" title="10、Vuex 在大项目中被常用"></a>10、Vuex 在大项目中被常用</h2><p>适用场景: 复杂关系的组件数据传递</p>
+<p>Vuex作用相当于一个用来存储共享变量的容器</p>
+<p>state：包含了store中存储的各个状态。</p>
+<p>getter: 类似于 Vue 中的计算属性，根据其他 getter 或 state 计算返回值。</p>
+<p>mutation: 一组方法，是改变store中状态的执行者，只能是同步操作。</p>
+<p>action: 一组方法，其中可以包含异步操作。</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/v55MqA"><img src="https://s1.ax1x.com/2022/09/01/v55MqA.png" srcset="/img/loading.gif" lazyload alt="v55MqA.png"></a></p>
+<h2 id="11、-root"><a href="#11、-root" class="headerlink" title="11、$root"></a>11、$root</h2><p>1、  作用：访问根组件中的属性或方法</p>
+<p>2、  注意：是根组件，不是父组件。$root只对根组件有用</p>
+<h2 id="12、slot插槽"><a href="#12、slot插槽" class="headerlink" title="12、slot插槽"></a>12、slot插槽</h2><p>就是把子组件的数据通过插槽的方式传给父组件使用，然后再插回来</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/v55JG8"><img src="https://s1.ax1x.com/2022/09/01/v55JG8.png" srcset="/img/loading.gif" lazyload alt="v55JG8.png"></a></p>
 
                 
               </div>
@@ -331,7 +389,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">#小程序</a>
+        <a href="/tags/vue/">#vue</a>
       
     </div>
   
@@ -343,8 +401,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>微信小程序的登录流程</div>
-      <div>http://example.com/2022/09/01/前端技术/微信小程序的登录流程/</div>
+      <div>vue组件传值的12种方式</div>
+      <div>http://example.com/2022/09/01/前端技术/vue组件传值的12种方式/</div>
     </div>
     <div class="license-meta">
       
@@ -386,18 +444,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/01/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/vue%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC%E7%9A%8412%E7%A7%8D%E6%96%B9%E5%BC%8F/" title="vue组件传值的12种方式">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">vue组件传值的12种方式</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/01/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/Vuex%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" title="Vuex使用教程">
-                        <span class="hidden-mobile">Vuex使用教程</span>
+                      <a href="/2022/09/01/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%99%BB%E5%BD%95%E6%B5%81%E7%A8%8B/" title="微信小程序的登录流程">
+                        <span class="hidden-mobile">微信小程序的登录流程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

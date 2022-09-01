@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>vue组件传值的12种方式</title>
+    <link href="/2022/09/01/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/vue%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC%E7%9A%8412%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
+    <url>/2022/09/01/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/vue%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC%E7%9A%8412%E7%A7%8D%E6%96%B9%E5%BC%8F/</url>
+    
+    <content type="html"><![CDATA[<h1 id="vue组件传值的12种方式"><a href="#vue组件传值的12种方式" class="headerlink" title="vue组件传值的12种方式"></a>vue组件传值的12种方式</h1><p><a href="https://imgse.com/i/v5hlyd"><img src="https://s1.ax1x.com/2022/09/01/v5hlyd.png" alt="v5hlyd.png"></a></p><p>Vue最常见的12种组件间的通讯方式</p><ul><li>props</li><li>$emit</li><li>.sync</li><li>v-model</li><li>ref</li><li>$children &#x2F; $parent</li><li>$attrs &#x2F; $listeners</li><li>provide &#x2F; inject</li><li>EventBus</li><li>Vuex</li><li>$root</li><li>slot</li></ul><p>适合父子间通信：props、$emit、$ref、slot、$parent、$children</p><p>适合兄弟组件之间的通信：eventBus、Vuex</p><p>祖孙与后代组件之间的通信：$attrs&#x2F;$listeners、provide&#x2F;inject、eventBus、Vuex</p><p>复杂关系的组件之间的通信：Vuex</p><h2 id="1、props"><a href="#1、props" class="headerlink" title="1、props"></a>1、props</h2><p>适用场景：父组件向子组件传递数据</p><p>父组件向子组件传送数据，这应该是最常用的方式了</p><p>子组件接收到数据之后，不能直接修改父组件的数据。</p><p>否则会报错，因为当父组件重新渲染时，数据会被覆盖。如果只在子组件内要修改的话推荐使用computed</p><p><a href="https://imgse.com/i/v5hyT0"><img src="https://s1.ax1x.com/2022/09/01/v5hyT0.png" alt="v5hyT0.png"></a></p><h2 id="2、-sync-子组件可以修改父组件内容"><a href="#2、-sync-子组件可以修改父组件内容" class="headerlink" title="2、.sync 子组件可以修改父组件内容"></a>2、.sync 子组件可以修改父组件内容</h2><p>.sync可以帮我们实现父组件向子组件传递的数据的双向绑定，所以子组件接收到数据后可以直接修改，并且会同时修改父组件的数据</p><p>适用场景：子组件传递数据给父组件</p><p><a href="https://imgse.com/i/v54CAP"><img src="https://s1.ax1x.com/2022/09/01/v54CAP.png" alt="v54CAP.png"></a></p><h2 id="3、v-model"><a href="#3、v-model" class="headerlink" title="3、v-model"></a>3、v-model</h2><p>和.sync类似，可以实现将父组件传给子组件的数据为双向绑定，子组件通过$emit修改父组件的数据</p><p><a href="https://imgse.com/i/v54ih8"><img src="https://s1.ax1x.com/2022/09/01/v54ih8.png" alt="v54ih8.png"></a></p><h2 id="4、ref"><a href="#4、ref" class="headerlink" title="4、ref"></a>4、ref</h2><p>ref如果在普通的DOM元素上，引用指向的就是该DOM元素;</p><p>如果在子组件上，引用的指向就是子组件实例;</p><p>父组件可以通过 ref 主动获取子组件的属性或者调用子组件的方法</p><p><a href="https://imgse.com/i/v54k9S"><img src="https://s1.ax1x.com/2022/09/01/v54k9S.png" alt="v54k9S.png"></a></p><h2 id="5、-emit-x2F-v-on"><a href="#5、-emit-x2F-v-on" class="headerlink" title="5、$emit &#x2F; v-on"></a>5、$emit &#x2F; v-on</h2><p>子组件通过派发事件的方式给父组件数据，或者触发父组件更新等操作</p><p><a href="https://imgse.com/i/v546ud"><img src="https://s1.ax1x.com/2022/09/01/v546ud.png" alt="v546ud.png"></a></p><h2 id="6-、-attrs-x2F-listeners"><a href="#6-、-attrs-x2F-listeners" class="headerlink" title="6 、$attrs &#x2F; $listeners"></a>6 、$attrs &#x2F; $listeners</h2><p>多层嵌套组件传递数据时，如果只是传递数据，而不做中间处理的话就可以用这个，比如父组件向孙子组件传递数据时</p><p>$attrs：包含父作用域里除 class 和 style 除外的非 props 属性集合。通过this.$attrs获取父作用域中所有符合条件的属性集合，然后还要继续传给子组件内部的其他组件，就可以通过v-bind&#x3D;”$attrs”</p><p>$listeners：包含父作用域里.native除外的监听事件集合。如果还要继续传给子组件内部的其他组件，就可以通过v-on&#x3D;”$linteners”使用方式是相同的</p><p><a href="https://imgse.com/i/v54REt"><img src="https://s1.ax1x.com/2022/09/01/v54REt.png" alt="v54REt.png"></a></p><h2 id="7、-children-x2F-parent"><a href="#7、-children-x2F-parent" class="headerlink" title="7、$children &#x2F; $parent"></a>7、$children &#x2F; $parent</h2><p>$children：获取到一个包含所有子组件(不包含孙子组件)的VueComponent对象数组，可以直接拿到子组件中所有数据和方法等</p><p>$parent：获取到一个父节点的VueComponent对象，同样包含父节点中所有数据和方法等</p><p><a href="https://imgse.com/i/v5458S"><img src="https://s1.ax1x.com/2022/09/01/v5458S.png" alt="v5458S.png"></a></p><h2 id="8、provide-x2F-inject"><a href="#8、provide-x2F-inject" class="headerlink" title="8、provide &#x2F; inject"></a>8、provide &#x2F; inject</h2><p>适用场景：祖先传递值给子孙</p><p>使用方式与vue2.0略有差异，vue2.0的provide和inject都为配置项，而在 3.x ， provide 需要导入并在 setup 里启用，并且现在是一个全新的方法。在 3.x ， provide 需要导入并在 setup 里启用，并且现在是一个全新的方法。</p><p>provide &#x2F; inject是依赖注入，在一些插件或组件库里被常用</p><p>provide：可以让我们指定想要提供给后代组件的数据或方法</p><p>inject：在任何后代组件中接收想要添加在这个组件上的数据或方法，不管组件嵌套多深都可以直接拿来用</p><p>要注意的是provide和inject传递的数据不是响应式的，也就是说用inject接收来数据后，provide里的数据改变了，后代组件中的数据不会改变，除非传入的就是一个可监听的对象 所以建议还是传递一些常量或者方法</p><p><a href="https://imgse.com/i/v54X5V"><img src="https://s1.ax1x.com/2022/09/01/v54X5V.png" alt="v54X5V.png"></a></p><h2 id="9、-EventBus"><a href="#9、-EventBus" class="headerlink" title="9、 EventBus"></a>9、 EventBus</h2><p>适用场景：兄弟组件&#x2F;隔代组件之间的通信</p><p>EventBus是中央事件总线，不管是父子组件，兄弟组件，跨层级组件等都可以使用它完成通信操作</p><p>定义方式有三种</p><p><a href="https://imgse.com/i/v55Z8O"><img src="https://s1.ax1x.com/2022/09/01/v55Z8O.png" alt="v55Z8O.png"></a></p><p>使用如下，以方法一按需引入为例</p><p><a href="https://imgse.com/i/v55mxe"><img src="https://s1.ax1x.com/2022/09/01/v55mxe.png" alt="v55mxe.png"></a></p><h2 id="10、Vuex-在大项目中被常用"><a href="#10、Vuex-在大项目中被常用" class="headerlink" title="10、Vuex 在大项目中被常用"></a>10、Vuex 在大项目中被常用</h2><p>适用场景: 复杂关系的组件数据传递</p><p>Vuex作用相当于一个用来存储共享变量的容器</p><p>state：包含了store中存储的各个状态。</p><p>getter: 类似于 Vue 中的计算属性，根据其他 getter 或 state 计算返回值。</p><p>mutation: 一组方法，是改变store中状态的执行者，只能是同步操作。</p><p>action: 一组方法，其中可以包含异步操作。</p><p><a href="https://imgse.com/i/v55MqA"><img src="https://s1.ax1x.com/2022/09/01/v55MqA.png" alt="v55MqA.png"></a></p><h2 id="11、-root"><a href="#11、-root" class="headerlink" title="11、$root"></a>11、$root</h2><p>1、  作用：访问根组件中的属性或方法</p><p>2、  注意：是根组件，不是父组件。$root只对根组件有用</p><h2 id="12、slot插槽"><a href="#12、slot插槽" class="headerlink" title="12、slot插槽"></a>12、slot插槽</h2><p>就是把子组件的数据通过插槽的方式传给父组件使用，然后再插回来</p><p><a href="https://imgse.com/i/v55JG8"><img src="https://s1.ax1x.com/2022/09/01/v55JG8.png" alt="v55JG8.png"></a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>前端技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>vue</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>微信小程序的登录流程</title>
     <link href="/2022/09/01/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%99%BB%E5%BD%95%E6%B5%81%E7%A8%8B/"/>
     <url>/2022/09/01/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%99%BB%E5%BD%95%E6%B5%81%E7%A8%8B/</url>
